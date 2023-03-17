@@ -1,0 +1,23 @@
+
+.lista{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+}
+
+.lista > li.categoria > a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    text-decoration: none;
+    color: rgb(4, 4, 54);
+    border-bottom: solid rgb(4, 4, 54) ;
+    padding: 1rem;
+}
+
+.logo {
+    width: 8rem;
+    height: auto;
+}
