@@ -8,7 +8,7 @@ function ItemDetailContainer({itemId}){
 
     useEffect(() => {
         const productoPromise = new Promise((resolve, reject) =>
-          setTimeout(() => resolve(Products), 2000)
+          setTimeout(() => resolve(Products), 1000)
         );
         productoPromise
           .then((reponse) => {
