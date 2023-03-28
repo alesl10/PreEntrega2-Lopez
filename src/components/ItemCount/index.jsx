@@ -6,33 +6,39 @@ import { useState } from "react";
 function ItemCount({ stock, onAdd }) {
   const [cant, setCant] = useState(1);
 
-  const sumar = () => {
-    if (stock > cant) setCant(cant + 1);
-  };
-  const restar = () => {
-    if (cant > 1) setCant(cant - 1);
-  };
-  const agregar = () => {
-    if (stock > 0) onAdd(cant);
-  };
   return (
-    <Container fluid className="d-flex flex-column align-items-center">
-      <p>
-        <strong>Unidades Disponibles: </strong>
-        {stock}
-      </p>
-      <div className="lineaBotones">
-        <Button variant="light" onClick={restar} className="botonCant">
-          -
-        </Button>{" "}
-        <h4>{cant}</h4>
-        <Button variant="light" onClick={sumar} className="botonCant">
-          +
-        </Button>{" "}
+    <Container>
+      <div >
+        <div className="lineaBotones">
+          <div>
+            <Button
+              variant="dark"
+              className="controls"
+              onClick={() => setCant((prevState) => prevState - 1)}
+              disabled={cant < 2}
+            >
+              -
+            </Button>
+          </div>
+
+          <div >{cant}</div>
+          <div>
+            <Button
+              variant="dark"
+              className="controls"
+              disabled={cant === stock}
+              onClick={() => setCant((prevState) => prevState + 1)}
+            >
+              +
+            </Button>
+          </div>
+        </div>
+        <div >
+          <Button variant="dark" onClick={() => onAdd(cant)}>
+            Añadir al carrito
+          </Button>
+        </div>
       </div>
-      <Button variant="primary" onClick={agregar}>
-        Agregar Al carrito
-      </Button>{" "}
     </Container>
   );
 }

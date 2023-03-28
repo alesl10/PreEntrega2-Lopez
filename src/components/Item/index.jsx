@@ -15,8 +15,6 @@ const {onAdd, onRemove} = useContext(Context);
         <p>{producto.name}</p>
         <p className="producDescription">{producto.descripcion}</p>       
         <Button variant="dark"><NavLink to={`/item/${producto.id}`}>Ver Detalle</NavLink>  </Button>
-        <Button variant="dark" onClick={onAdd}>Agregar a carrito</Button>
-        <Button variant="dark" onClick={onRemove}>Remover de carrito</Button>
         
             
         

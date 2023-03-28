@@ -13,6 +13,7 @@ export default [
   {
     id: 1,
     name: "Taza",
+    precio: 980,
     stock: 5,
     descripcion: "Taza polimero Los Simpsons",
     img: taza1,
@@ -21,6 +22,7 @@ export default [
   {
     id: 2,
     name: "Taza",
+    precio: 980,
     stock: 5,
     descripcion: "Taza ceramica Los Simpsons",
     img: taza2,
@@ -29,6 +31,7 @@ export default [
   {
     id: 3,
     name: "Taza",
+    precio: 980,
     stock: 5,
     descripcion: "Taza polimero Los Simpsons",
     img: taza3,
@@ -37,6 +40,7 @@ export default [
   {
     id: 4,
     name: "Taza",
+    precio: 980,
     stock: 5,
     descripcion: "Taza ceramica Los Simpsons",
     img: taza4,
@@ -45,6 +49,7 @@ export default [
   {
     id: 5,
     name: "Taza",
+    precio: 980,
     stock: 5,
     descripcion: "Taza ceramica Los Simpsons",
     img: taza5,
@@ -53,6 +58,7 @@ export default [
   {
     id: 6,
     name: "Taza",
+    precio: 980,
     stock: 5,
     descripcion: "Taza ceramica Los Simpsons",
     img: taza6,
@@ -61,6 +67,7 @@ export default [
   {
     id: 7,
     name: "Taza",
+    precio: 980,
     stock: 5,
     descripcion: "Taza polimero Los Simpsons",
     img: taza7,
@@ -69,6 +76,7 @@ export default [
   {
     id: 8,
     name: "Taza",
+    precio: 980,
     stock: 5,
     descripcion: "Taza polimero Los Simpsons",
     img: taza8,
@@ -77,6 +85,7 @@ export default [
   {
     id: 9,
     name: "Taza",
+    precio: 980,
     stock: 5,
     descripcion: "Taza polimero Los Simpsons",
     img: taza9,
@@ -85,6 +94,7 @@ export default [
   {
     id: 10,
     name: "Taza",
+    precio: 980,
     stock: 5,
     descripcion: "Taza polimero Los Simpsons",
     img: taza10,

@@ -1,26 +1,46 @@
 import { createContext, useState } from "react";
 
 export const Context = createContext();
+export function GlobalProvider({ children }) {
 
-export function GlobalProvider({children}) {
-    const [itemsAddedQuantity, setitemsAddedQuantity] = useState([]);
+    const [productsAdded, setProductsAdded] = useState([]);
 
-    const onAdd = () => {
-        setitemsAddedQuantity((prev) => prev.concat({}));
-    };
+    function onAdd(producto, quantity) {
+        const isAlreadyAdded = isInCart(producto);
 
-    const onRemove = () => {
-        let tempCart = itemsAddedQuantity.slice(1);
-        setitemsAddedQuantity(tempCart);
-    };
+        if (isAlreadyAdded) {
+            const productToModify = productsAdded.find(
+                (productsAdded) => productsAdded.id === producto.id
+            );
 
-    const value = {
-        itemsAddedQuantity,
-        onAdd,
-        onRemove,
-        name: "hola mundo",
+            const productModified = {
+                ...productToModify,
+                quantity: productToModify.quantity + quantity,
+            };
+
+            setProductsAdded((prevState) =>
+                prevState.map((productsAdded) =>
+                    productsAdded.id === producto.id ? productModified : productsAdded
+                )
+            );
+        } else {
+            setProductsAdded((prevState) =>
+                prevState.concat({ ...producto, quantity })
+            );
+        }
     }
 
-    return <Context.Provider value={value}>{children}</Context.Provider>
+    function removeItem(itemId) { }
+    function clear() { }
 
-};
+    function isInCart(producto) {
+        return productsAdded.some((productAdded) => productAdded.id === producto.id);
+    }
+
+    
+    return (
+        <Context.Provider value={{ productsAdded, onAdd }}>
+            {children}
+        </Context.Provider>
+    );
+}
